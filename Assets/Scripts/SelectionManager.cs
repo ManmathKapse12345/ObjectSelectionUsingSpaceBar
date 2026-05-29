@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class SelectionManager : MonoBehaviour
 {
-    const int numberOfObjects = 5;
-    const float speed = 10f;
+    private const int numberOfObjects = 5;
+    private const float speed = 10f;
     public GameObject[] objects = new GameObject[numberOfObjects];
     int index;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -20,9 +20,20 @@ public class SelectionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for(int i = 0; i < numberOfObjects; i++)
+        for (int i = 0; i < numberOfObjects; i++)
         {
-            objects[i].transform.Rotate(Vector3.right*Time.deltaTime*speed);
+            if (objects[i].name == "Cube")
+            {
+                objects[i].transform.Rotate((Vector3.right + Vector3.up + Vector3.forward) * Time.deltaTime * speed);
+            }
+            else if (objects[i].name == "Plane")
+            {
+                objects[i].transform.Rotate(Vector3.up * Time.deltaTime * speed);
+            }
+            else
+            {
+                objects[i].transform.Rotate(Vector3.right * Time.deltaTime * speed);
+            }
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
