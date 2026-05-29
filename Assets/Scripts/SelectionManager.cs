@@ -13,6 +13,7 @@ public class SelectionManager : MonoBehaviour
         Material mat = rend.material;
         mat.EnableKeyword("_EMISSION");
         mat.SetColor("_EmissionColor", Color.green * 5.0f);
+        Debug.Log(objects[index].name);
     }
 
     // Update is called once per frame
@@ -29,6 +30,7 @@ public class SelectionManager : MonoBehaviour
             mat = rend.material;
             mat.EnableKeyword("_EMISSION");
             mat.SetColor("_EmissionColor", Color.green * 5.0f);
+            Debug.Log(objects[index].name);
         }
 
     }
