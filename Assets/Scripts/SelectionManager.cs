@@ -10,11 +10,11 @@ public class SelectionManager : MonoBehaviour
     public GameObject[] objects = new GameObject[numberOfObjects];
     private Vector3[] labelPosition = new Vector3[]
     {
-        new Vector3(-8.64f,-2.42f,-1.57f),
-        new Vector3(-5.48f,-2.42f,-1.57f),
-        new Vector3(-2.3f,-2.42f,-1.57f),
-        new Vector3(1.37f,-2.42f,-1.57f),
-        new Vector3(7f,-2.42f,-1.57f)
+        new Vector3(-9f,-2.42f,6.64f),
+        new Vector3(-5.54f,-2.42f,6.64f),
+        new Vector3(-2.18f,-2.42f,6.64f),
+        new Vector3(1.3f,-2.42f,6.64f),
+        new Vector3(6.64f,-2.42f,6.64f)
     };
     int index;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
