@@ -12,12 +12,24 @@ public class SelectionManager : MonoBehaviour
         Renderer rend = objects[index].GetComponent<Renderer>();
         Material mat = rend.material;
         mat.EnableKeyword("_EMISSION");
-        mat.SetColor("_EmissionColor",Color.green*5.0f);
+        mat.SetColor("_EmissionColor", Color.green * 5.0f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Renderer rend = objects[index].GetComponent<Renderer>();
+            Material mat = rend.material;
+            mat.EnableKeyword("_EMISSION");
+            mat.SetColor("_EmissionColor", Color.black);
+            index = (index + 1) % numberOfObjects;
+            rend = objects[index].GetComponent<Renderer>();
+            mat = rend.material;
+            mat.EnableKeyword("_EMISSION");
+            mat.SetColor("_EmissionColor", Color.green * 5.0f);
+        }
+
     }
 }
